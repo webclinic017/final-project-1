@@ -2,13 +2,16 @@
 
 ## What idea(s) do you have for your final project?
 
-build a trading bot
+TODO
+I want to build trading bot
 
 ## If you plan to collaborate with one or two classmates, what are their names?
 
-nobody only myself
+TODO
+none
 
 
 ## Do you have any questions of your own?
 
+TODO
 no question for now
