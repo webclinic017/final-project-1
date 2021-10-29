@@ -2,7 +2,9 @@
 
 ## What idea(s) do you have for your final project?
 
-I want to build trading bot
+Build trading bot
+
+Build a website
 
 ## If you plan to collaborate with one or two classmates, what are their names?
 
