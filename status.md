@@ -10,7 +10,7 @@ Bryan Li
 
 #### Project title
 
-Trading Bot
+SPY Trading Bot
 
 ***
 
