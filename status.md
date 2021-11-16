@@ -6,11 +6,11 @@ Bryan Li
 
 #### Your section leader's name
 
-TODO
+Bryan Li
 
 #### Project title
 
-TODO
+Trading Bot
 
 ***
 
