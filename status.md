@@ -18,12 +18,12 @@ Short answers for the below questions suffice. If you want to alter your plan fo
 
 #### What have you done for your project so far?
 
-TODO
+setting up the buy and sell only for the stock SPY, geting the market data, connecting to the api, listing all the currect positions 
 
 #### What have you not done for your project yet?
 
-TODO
+implementing the strategy 
 
 #### What problems, if any, have you encountered?
 
-TODO
+implementing the strategy 
