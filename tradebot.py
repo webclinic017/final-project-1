@@ -1,4 +1,5 @@
 import alpaca_trade_api as tradeapi
+import pandas as pd
 import numpy as np
 import time
 
@@ -31,30 +32,54 @@ while True:
     print("checking price")
 
     #Getting Data for the stock
-    barset = api.get_barset('SPY', 'minute', limit=30) # using the last 5 trading days 30 min candlesticks
-    bars = barset['SPY']
+    data_5min = api.get_barset('SPY', 'minute', limit=5) # using the last 5 trading days 5 min candlesticks
 
-    week_open = bars[-1].o
-    #print("open",week_open)
-    week_close = bars[-1].c
-    #print("close",week_close)
+    data_21min = api.get_barset('SPY', 'minute', limit=21) # using this for the 21 moving averages 
 
-    percent_change = (week_close - week_open) / week_open * 100
-    #print(f'SPY moved {percent_change}% over the last 5 days')
+    data_9min = api.get_barset('SPY', 'minute', limit=9) # using this for the 9 moving averages 
 
+
+    bars = data_5min['SPY']
 
     #storing the data
 
-    data = []
-    for bar in barset["SPY"]:
-        data.append(bar.c)  # getting the closing data of the stock
+    data5 = []
+    for bar in data_5min["SPY"]:
+        data5.append(bar.c)  # getting the closing data of the stock
 
-    data = np.array(data,dtype=np.float64) # convert the the list into numpy
-    Ma = np.mean(data) # moving average
-    last_price = data[-1] # the last closing price
+    data5 = np.array(data5,dtype=np.float64) # convert the the list into numpy
+    last_price = data5[-1] # getting the last closing price
 
-    print("Moving Average: " + str(Ma))
+    #making the 9 nad 21 moving averages
+
+    # the 9 moving average
+    data9 = []
+    for bar in data_9min["SPY"]:
+        data9.append(bar.c)  
+
+    data21 = np.array(data9,dtype=np.float64) # convert the the list into numpy
+
+    Ma_9 = pd.Series(data9)
+    last_MA_9 = Ma_9.mean()
+    print("the 9 moving average", last_MA_9)
+
+    # the 21 moving average
+    data21 = []
+    for bar in data_21min["SPY"]:
+        data21.append(bar.c)  
+
+    data21 = np.array(data21,dtype=np.float64) # convert the the list into numpy
+
+    Ma_21 = pd.Series(data21)
+    last_MA_21 = Ma_21.mean()
+    print("the 21 moving average", last_MA_21)
+
+
+
     print("Last Price: " + str(last_price))
+
+    
+    print(data5)
 
 
 
