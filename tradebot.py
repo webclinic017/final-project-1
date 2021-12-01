@@ -50,14 +50,14 @@ while True:
     data5 = np.array(data5,dtype=np.float64) # convert the the list into numpy
     last_price = data5[-1] # getting the last closing price
 
-    #making the 9 nad 21 moving averages
+    #making the 9 nad 21 moving averages cited:https://www.delftstack.com/howto/python/moving-average-python/#:~:text=Use%20the%20pandas%20Module%20to%20Calculate%20the%20Moving%20Average,-Time%20series%20data&text=We%20first%20convert%20the%20numpy,using%20the%20mean()%20function.
 
     # the 9 moving average
     data9 = []
     for bar in data_9min["SPY"]:
         data9.append(bar.c)  
 
-    data21 = np.array(data9,dtype=np.float64) # convert the the list into numpy
+    data9 = np.array(data9,dtype=np.float64) # convert the the list into numpy
 
     Ma_9 = pd.Series(data9)
     last_MA_9 = Ma_9.mean()
@@ -76,7 +76,7 @@ while True:
 
 
 
-    print("Last Price: " + str(last_price))
+    print("Last Price: " + str(last_price)) # on the five minute chart 
 
     
     print(data5)
