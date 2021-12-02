@@ -65,7 +65,7 @@ while True:
 
     Ma_9 = pd.Series(data9) # a list of all the data 
     last_MA_9 = Ma_9.mean() # The mean of the list
-    print("the 9 moving average", last_MA_9)
+    #print("the 9 moving average", last_MA_9)
 
     # the 21 moving average
     data21 = []
@@ -76,7 +76,7 @@ while True:
 
     Ma_21 = pd.Series(data21) # a list of all the data 
     last_MA_21 = Ma_21.mean() # the mean of the list
-    print("the 21 moving average", last_MA_21)
+    #print("the 21 moving average", last_MA_21)
 
 
 
@@ -107,8 +107,7 @@ while True:
         type = "market",
         time_in_force = "gtc" # good till cancel 
     )
-    
-            
+    time.sleep(60)
 
 
 
